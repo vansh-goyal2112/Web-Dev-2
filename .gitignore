@@ -1,1 +1,19 @@
+# Node / npm binaries (DO NOT COMMIT)
+node.exe
+npm
+npm.cmd
+npm.ps1
+npx
+npx.cmd
+npx.ps1
+corepack
+corepack.cmd
+nodevars.bat
+install_tools.bat
+
+# Node modules
 node_modules
+
+# OS junk
+.DS_Store
+Thumbs.db
