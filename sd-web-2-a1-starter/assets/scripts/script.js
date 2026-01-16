@@ -33,11 +33,14 @@ for (let i = 0; i < characters.length; i++) {
 // 2. Filter the characters array to find only those characters whose age property is less than 40. Log each filtered character's name to the console. Then, dynamically create <li> elements for each filtered character and append them to the HTML unordered list element with the id "young-characters-list".
 
 const ul2 = document.getElementById("young-characters-list");
-const emptyList = ul2.parentElement.querySelector(".empty-list");
+const emptyList = document.querySelector(".empty-list");
 emptyList.textContent = "";
 let hasOutputList = false;
 const threshold = 40;
+const resultMsg = document.getElementById("filter-age-result-ex-2");
+resultMsg.textContent = "All the Characters under age = " + threshold;
 console.log("Result 2:")
+console.log("All the Characters under age = " + threshold)
 
 for(let i =0; i < characters.length; i++) {
   if(characters[i].age < threshold) {
@@ -79,6 +82,9 @@ const emptyList4 = ul4.parentElement.querySelector(".empty-list");
 console.log("Result 4:")
 
 function characterNameByThreshold(c, threshold) {
+  console.log("All the Characters under age = " + threshold);
+  const resultMsg = document.getElementById("filter-age-result-ex-4");
+  resultMsg.textContent = "All the Characters under age = " + threshold;
   ul4.textContent = "";
   emptyList4.textContent = "";
   let hasOutputList4 = false;
@@ -102,8 +108,11 @@ characterNameByThreshold(characters, 60);
 // 5. Enhance your rendering functions from exercises 3 and 4 with error handling logic. Before accessing the name property of each character object, check whether the "name" property exists. If a character object is missing the name property, use console.error() to log a descriptive error message to the console, and dynamically create and display the error message in the HTML div element with id "error-messages".
 console.log("Result 5:")
 
-function characterNamePropertyCheck(c, ulId, divId, threshold) {
+function characterNamePropertyCheck(c, ulId, divId, threshold, resultMsgId) {
+  console.log("All the Characters under age = " + threshold)
   const ul5 = document.getElementById(ulId);
+  const resultMsg = document.getElementById(resultMsgId);
+  resultMsg.textContent = "All the Characters under age = " + threshold;
   const errorDiv = document.getElementById(divId);
   const successMsg = errorDiv.parentElement.querySelector(".success")
   const emptyList5 = ul5.parentElement.querySelector(".empty-list");
@@ -151,7 +160,7 @@ function characterNamePropertyCheck(c, ulId, divId, threshold) {
   }
 }
 
-characterNamePropertyCheck(characters, "error-handling-list", "error-messages", 1000);
+characterNamePropertyCheck(characters, "error-handling-list", "error-messages", 1000, "filter-age-result-ex-5");
 
 // 6. Create a second array called "brokenCharacters" that intentionally contains objects with missing name properties (e.g., objects with only id and age). Pass this broken array to your error-handling functions from exercise 5. Verify that your error handling correctly identifies the missing name properties, logs appropriate error messages to the console, and displays those error messages in the HTML div element with id "broken-array-errors".
 console.log("Result 6:")
@@ -169,4 +178,4 @@ const brokenCharacters = [
     { id: 10, age: 27 },
 ];
 
-characterNamePropertyCheck(brokenCharacters, "broken-array-list", "broken-array-errors", 1000);
+characterNamePropertyCheck(brokenCharacters, "broken-array-list", "broken-array-errors", 1000, "filter-age-result-ex-6");

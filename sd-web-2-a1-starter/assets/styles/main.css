@@ -100,6 +100,15 @@ section p {
   font-size: 1rem;
 }
 
+#filter-age-result-ex-2,
+#filter-age-result-ex-4,
+#filter-age-result-ex-5, 
+#filter-age-result-ex-6 {
+  color: rgb(151, 63, 199);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
 /* Output areas */
 .output {
   background-color: #f7f9fa;
